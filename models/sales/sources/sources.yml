@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: cust_src
+    description: "Raw tables from the source system"
+    schema: customer
+    tables:
+      - name: raw_customers
+      - name: stg_cust_with_seg_rank
+      - name: segment_wise_total
+      - name: customers
