@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: stg_cust_with_seg_rank
+    description: "stage derived columns in staging table"
+    columns:
+        - name: customer_id
+          description: "customer ids are unique and not null"
+          tests:
+            - not_null
+            - unique
+        - name: segment_wt
+          description: "Compute weights for the segment"
+          tests:
+            - accepted_values:
+                arguments:
+                  values: [1,2,3]

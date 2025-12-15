@@ -5,7 +5,23 @@ sources:
     description: "Raw tables from the source system"
     schema: customer
     tables:
-      - name: raw_customers
-      - name: stg_cust_with_seg_rank
-      - name: segment_wise_total
       - name: customers
+        description: "all customer information"
+        columns:
+          - name: customer_id
+            description: "customer ID is unique and can't have NULL values"
+            tests:
+              - not_null
+              - unique
+          - name: email
+            description: "email ID must contain @ symbol"
+            tests:
+              - validate_regex_pattern:
+                  arguments:
+                    pattern : '^[^@]+@[^@]+\.[^@]+$'
+              
+          
+       
+              
+          
+        

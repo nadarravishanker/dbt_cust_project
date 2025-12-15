@@ -1,6 +1,7 @@
+-- Override default setting in dbt_project.yml
 {{
     config(
-        materialized='table',
+        materialized='table',   
         transient=false
     )
 }}

@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: segment_wise_total
+    description: "final mart table to compute segment wise total"
+    columns:
+      - name: total
+        description: "validate if counts are greater than zero"
+        tests:
+          - validate_count_gt_n:
+              arguments:
+                value : 0
+        
+
