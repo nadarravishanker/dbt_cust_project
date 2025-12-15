@@ -1,4 +1,7 @@
-{{ config(materialized='table', transient=false) }}
+{{ config(
+    materialized='table', 
+    transient=false) 
+}}
 
 with source as(
     select customer_id, 
